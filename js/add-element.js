@@ -3,6 +3,12 @@
  */
 
 // get all the hot class elements- change them to cool class
+var nlist = document.querySelectorAll("li.hot");
+for(var i = 0; i<nlist.length; i++){
+  nlist[i].setAttribute("class", "cool");
+}
+$('li.hot').removeclass('hat');
+$('li').addclass('cool');
 
 
 // traverse the elements

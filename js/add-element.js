@@ -19,6 +19,7 @@ $("#one").next().next().text("milk");
 
 // add a new element
 $("add").click(addElement);
+$("#todo").append("<li class='cool'> sauce </li>");
 
 
 // add by clicking the plus sign
@@ -26,6 +27,18 @@ document.getElementById("add").addEventListener("click", addElement);
 
 function addElement() {
   // add a new element
+  $("#todo").append("<li><input type = 'text'></li>");
+
+  $('input').blur(function(){
+    $(this).parent().addClass("cool");
+    $('li').click(changeStyle);
+    var userinput = $(this).val();
+    $(this).parent().text(userinput);
+  });
+
+
+  var userinput = $(this).val();
+  $(this).parent().text(userinput);
   
 }
 $('li').click(changeStyle);
@@ -57,7 +70,7 @@ document.getElementById("remove").addEventListener("click", removeElement);
 
 function removeElement() {
   // remove the marked element
-  $('')
+  $('li.complete').remove();
  
  
 }
